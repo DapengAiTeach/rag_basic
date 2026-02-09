@@ -1,16 +1,10 @@
 from fastapi import FastAPI, HTTPException
 from .schemas.login_schema import UserLogin
+from .mocks.user_mock import fake_user_db
 
 # 创建 FastAPI 应用实例
 app = FastAPI()
 
-# 创建一个简单的用户数据（模拟数据库）
-fake_user_db = {
-    "admin": {
-        "username": "admin",
-        "password": "admin123456"
-    }
-}
 
 # 登录接口
 @app.post("/login")
