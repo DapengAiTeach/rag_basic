@@ -1,13 +1,8 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from .schemas.login_schema import UserLogin
 
 # 创建 FastAPI 应用实例
 app = FastAPI()
-
-# 定义用户登录数据模型
-class UserLogin(BaseModel):
-    username: str
-    password: str
 
 # 创建一个简单的用户数据（模拟数据库）
 fake_user_db = {
