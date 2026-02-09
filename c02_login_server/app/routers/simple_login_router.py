@@ -2,7 +2,8 @@ from fastapi import APIRouter, HTTPException
 from ..schemas.login_schema import UserLogin
 from ..mocks.user_mock import fake_user_db
 
-router = APIRouter()
+router = APIRouter(prefix="/simple_login", tags=["登录管理"])
+
 
 @router.post("/login")
 async def login(user: UserLogin):
